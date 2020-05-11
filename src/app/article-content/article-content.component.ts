@@ -15,7 +15,6 @@ export class ArticleContentComponent implements OnInit {
  
   private myTemplate: any = "";
   private articleNamePath :string = "";
-  private aa :string = "";
 
   ngOnInit() {
     
