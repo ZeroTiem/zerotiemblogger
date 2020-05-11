@@ -1,5 +1,6 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article-content',
@@ -8,14 +9,22 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class ArticleContentComponent implements OnInit {
-  constructor(private http: HttpClient) { }
-  
+  constructor(private http: HttpClient,private router: ActivatedRoute) { }
+ 
   private myTemplate: any = "";
 
   ngOnInit() {
-    this.http.get("assets/新增腳本.html", { responseType: 'text' }).subscribe(htmlText => {
+    
+    var pageName = this.router.snapshot.queryParamMap.get('page');
+    console.log(pageName+'.html');
+    this.http.get( 'assets/' + pageName+'.html', { responseType: 'text' }).subscribe(htmlText => {
       this.myTemplate = this.ConversionFormatToWeb(htmlText);
     });
+
+
+    // this.http.get("assets/.01%20新增腳本.html", { responseType: 'text' }).subscribe(htmlText => {
+    //   this.myTemplate = this.ConversionFormatToWeb(htmlText);
+    // });
   }
 
   ConversionFormatToWeb(htmlText: string) {
