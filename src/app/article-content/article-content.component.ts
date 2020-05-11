@@ -1,6 +1,8 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-article-content',
@@ -12,19 +14,27 @@ export class ArticleContentComponent implements OnInit {
   constructor(private http: HttpClient,private router: ActivatedRoute) { }
  
   private myTemplate: any = "";
+  private articleNamePath :string = "";
+  private aa :string = "";
 
   ngOnInit() {
     
-    var pageName = this.router.snapshot.queryParamMap.get('page');
-    console.log(pageName+'.html');
-    this.http.get( 'assets/' + pageName+'.html', { responseType: 'text' }).subscribe(htmlText => {
+    this.articleNamePath = 'assets/' + this.router.snapshot.paramMap.get('articleName') + '.html';
+    console.log(this.articleNamePath);
+    this.http.get( this.articleNamePath, { responseType: 'text' }).subscribe(htmlText => {
       this.myTemplate = this.ConversionFormatToWeb(htmlText);
     });
 
+    // var GetarticleName = this.router.paramMap.pipe(
+    //   switchMap(params => {
+    //     return params.get('articleName');
+    //   })
+    // );
 
-    // this.http.get("assets/.01%20新增腳本.html", { responseType: 'text' }).subscribe(htmlText => {
-    //   this.myTemplate = this.ConversionFormatToWeb(htmlText);
+    // GetarticleName.subscribe(articleName=>{
+    //   this.aa = articleName;
     // });
+    // console.log(this.aa);
   }
 
   ConversionFormatToWeb(htmlText: string) {
