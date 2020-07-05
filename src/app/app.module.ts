@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ArticleContentComponent } from './article-content/article-content.component';
 import { CustomPipe } from './pipe/custompipe.module';
+import { NETComponent } from './net/net.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CustomPipe } from './pipe/custompipe.module';
     FooterComponent,
     HomeComponent,
     ArticleContentComponent,
+    NETComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { CustomPipe } from './pipe/custompipe.module';
     CustomPipe,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 
 
