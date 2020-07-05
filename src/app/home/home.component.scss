@@ -1,15 +1,7 @@
-.article-content {
-    div {
-      font-size: 23px;
-     
-      .postItem img {
-        height: auto;
-        width: 450px;
-      }
-    }
-    ::ng-deep img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  }
-  
+@import 'body.scss'; 
+@import 'bookmark.scss'; 
+
+article {
+    @extend %bodyloayout;
+    @extend %bookmark;
+}
