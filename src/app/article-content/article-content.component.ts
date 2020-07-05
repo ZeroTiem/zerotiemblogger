@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class ArticleContentComponent implements OnInit {
   constructor(private http: HttpClient, private router: ActivatedRoute) { }
 
-  private myTemplate: any = "";
+  public myTemplate: any = "";
   private articleNamePath: string = "";
   private folderPath: string = "";
 

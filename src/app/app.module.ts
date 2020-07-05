@@ -28,7 +28,7 @@ import { NETComponent } from './net/net.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas:[NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 
 
