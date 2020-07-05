@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NETComponent } from './net.component';
 
+
 describe('NETComponent', () => {
   let component: NETComponent;
   let fixture: ComponentFixture<NETComponent>;

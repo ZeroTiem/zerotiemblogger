@@ -20,32 +20,17 @@ export class ArticleContentComponent implements OnInit {
   ngOnInit() {
     var folder = this.router.snapshot.paramMap.get('folder');
     this.folderPath = 'assets/';
-    debugger;
     if (folder != null) {
       this.folderPath += folder + '/';
     }
-
     this.articleNamePath += this.folderPath + this.router.snapshot.paramMap.get('articleName') + '.html';
-
     console.log(this.articleNamePath);
     this.http.get(this.articleNamePath, { responseType: 'text' }).subscribe(htmlText => {
       this.myTemplate = this.ConversionFormatToWeb(htmlText);
     });
-
-    // var GetarticleName = this.router.paramMap.pipe(
-    //   switchMap(params => {
-    //     return params.get('articleName');
-    //   })
-    // );
-
-    // GetarticleName.subscribe(articleName=>{
-    //   this.aa = articleName;
-    // });
-    // console.log(this.aa);
   }
 
   ConversionFormatToWeb(htmlText: string) {
-    debugger;
     var newHtmlText = htmlText.split('<img src="').join('<img src="' + this.folderPath); // Img Src Change To Web Path
     newHtmlText = newHtmlText.replace('<html>', '').replace('</html>', '');//Remove html Tag
     var searchKeyWord = '</head>';

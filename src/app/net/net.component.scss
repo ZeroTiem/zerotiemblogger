@@ -1,27 +1,7 @@
-article {
-    margin-top: 20px;
-    margin-left: 20px;
-    div {
-        margin-top: 20px;
-        margin-bottom: 50px;
-        a {
-            color: rgb(44, 170, 187);
-        }
-        /*中間的過度的橫線*/
-        .link-top {
-            width: 60%;
-            height: 0.5px;
-            border-top: solid powderblue 2px;
-            margin-top: 25px;
-            margin-bottom: 20px;
-        }
-    }
+@import 'body.scss'; 
+@import 'bookmark.scss'; 
 
-    .link-body {
-        width: 80%;
-        height: 0.5px;
-        border-top: solid powderblue 2px;
-        margin-top: 25px;
-        margin-bottom: 20px;
-    }
+article {
+    @extend %bodyloayout;
+    @extend %bookmark;
 }
