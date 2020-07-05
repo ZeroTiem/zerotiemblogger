@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ArticleContentComponent } from './article-content/article-content.component';
 import { CustomPipe } from './pipe/custompipe.module';
+import { NETComponent } from './net/net.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CustomPipe } from './pipe/custompipe.module';
     FooterComponent,
     HomeComponent,
     ArticleContentComponent,
+    NETComponent,
   ],
   imports: [
     BrowserModule,

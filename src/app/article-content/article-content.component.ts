@@ -11,16 +11,24 @@ import { Observable } from 'rxjs';
 })
 
 export class ArticleContentComponent implements OnInit {
-  constructor(private http: HttpClient,private router: ActivatedRoute) { }
- 
+  constructor(private http: HttpClient, private router: ActivatedRoute) { }
+
   private myTemplate: any = "";
-  private articleNamePath :string = "";
+  private articleNamePath: string = "";
+  private folderPath: string = "";
 
   ngOnInit() {
-    
-    this.articleNamePath = 'assets/' + this.router.snapshot.paramMap.get('articleName') + '.html';
+    var folder = this.router.snapshot.paramMap.get('folder');
+    this.folderPath = 'assets/';
+    debugger;
+    if (folder != null) {
+      this.folderPath += folder + '/';
+    }
+
+    this.articleNamePath += this.folderPath + this.router.snapshot.paramMap.get('articleName') + '.html';
+
     console.log(this.articleNamePath);
-    this.http.get( this.articleNamePath, { responseType: 'text' }).subscribe(htmlText => {
+    this.http.get(this.articleNamePath, { responseType: 'text' }).subscribe(htmlText => {
       this.myTemplate = this.ConversionFormatToWeb(htmlText);
     });
 
@@ -37,7 +45,8 @@ export class ArticleContentComponent implements OnInit {
   }
 
   ConversionFormatToWeb(htmlText: string) {
-    var newHtmlText = htmlText.split('<img src="').join('<img src="assets/'); // Img Src Change To Web Path
+    debugger;
+    var newHtmlText = htmlText.split('<img src="').join('<img src="' + this.folderPath); // Img Src Change To Web Path
     newHtmlText = newHtmlText.replace('<html>', '').replace('</html>', '');//Remove html Tag
     var searchKeyWord = '</head>';
     var index = newHtmlText.indexOf(searchKeyWord) + searchKeyWord.length; //Get Last Head Tag Index
