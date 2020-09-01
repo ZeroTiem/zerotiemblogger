@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ArticleContentComponent } from './article-content/article-content.component';
 import { CustomPipe } from './pipe/custompipe.module';
 import { NETComponent } from './net/net.component';
+import { OtherComponent } from './other/other.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NETComponent } from './net/net.component';
     HomeComponent,
     ArticleContentComponent,
     NETComponent,
+    OtherComponent,
   ],
   imports: [
     BrowserModule,
