@@ -131,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "zerotiemblogger"
+  "defaultProject": "zerotiemblogger",
+  "cli": {
+    "analytics": "676c0e31-02b4-4db2-847d-aeb1dae97e80"
+  }
 }
