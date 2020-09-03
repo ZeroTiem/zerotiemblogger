@@ -26,8 +26,8 @@ import { environment } from 'src/environments/environment';
   ],
   imports: [
     BrowserModule,
-    // NgxGoogleAnalyticsModule.forRoot(environment.ga.code),
-    // NgxGoogleAnalyticsRouterModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.ga.code),
+    NgxGoogleAnalyticsRouterModule,
     AppRoutingModule,
     HttpClientModule,
     CustomPipe,
