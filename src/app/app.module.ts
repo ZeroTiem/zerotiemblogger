@@ -11,6 +11,8 @@ import { ArticleContentComponent } from './article-content/article-content.compo
 import { CustomPipe } from './pipe/custompipe.module';
 import { NETComponent } from './net/net.component';
 import { OtherComponent } from './other/other.component';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { OtherComponent } from './other/other.component';
   ],
   imports: [
     BrowserModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.ga.code),
+    NgxGoogleAnalyticsRouterModule,
     AppRoutingModule,
     HttpClientModule,
     CustomPipe,

@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'net', component: NETComponent },
   { path: 'other', component: OtherComponent },
   { path: 'ArticleContent/:articleName', component: ArticleContentComponent },
-  { path: 'ArticleContent/:folder/:articleName', component: ArticleContentComponent }
+  { path: 'ArticleContent/:folder/:articleName', component: ArticleContentComponent },
+  { path: '*', component: HomeComponent }
 ];
 
 @NgModule({
