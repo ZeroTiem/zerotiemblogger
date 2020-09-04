@@ -30,7 +30,7 @@ import { environment } from 'src/environments/environment';
     NgxGoogleAnalyticsRouterModule,
     AppRoutingModule,
     HttpClientModule,
-    CustomPipe,
+    CustomPipe
   ],
   providers: [],
   bootstrap: [AppComponent],
