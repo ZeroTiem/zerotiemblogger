@@ -39,7 +39,7 @@ export class ArticleContentComponent implements OnInit {
     this.http.get(this.articleNamePath, { responseType: 'text' }).subscribe(htmlText => {
       this.myTemplate = this.ConversionFormatToWeb(htmlText);
       this.shareService.setFacebookTags(
-        this.routers.url,
+        'https://blog.zerotiem.com/'+this.routers.url,
         articleName,
         // this.GetFirstText(this.myTemplate),
         articleName,
