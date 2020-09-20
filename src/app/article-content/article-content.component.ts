@@ -39,7 +39,7 @@ export class ArticleContentComponent implements OnInit {
     this.http.get(this.articleNamePath, { responseType: 'text' }).subscribe(htmlText => {
       this.myTemplate = this.ConversionFormatToWeb(htmlText);
       this.shareService.setFacebookTags(
-        'https://blog.zerotiem.com/'+this.routers.url,
+        'https://blog.zerotiem.com'+this.routers.url,
         articleName,
         // this.GetFirstText(this.myTemplate),
         articleName,
@@ -63,7 +63,7 @@ export class ArticleContentComponent implements OnInit {
     if (htmlTextSplit != null && htmlTextSplit.length > 0) {
       var searchText = htmlTextSplit[1].split('"')[0];
       console.log("MeteImg:" + searchText);
-      return searchText;
+      return '/' + searchText;
     };
     return null;
   }
