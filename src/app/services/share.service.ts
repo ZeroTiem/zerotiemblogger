@@ -16,7 +16,7 @@ export class ShareService {
   constructor(private metaService: Meta) { } 
 
   public setFacebookTags(url: string, title: string, description: string, image: string): void {
-    var imageUrl = `https://images.codinghub.net/${image}`;
+    var imageUrl = `https://blog.zerotiem.com/${image}`;
     var tags = [
       new MetaTag(this.urlMeta, url),
       new MetaTag(this.titleMeta, title),
