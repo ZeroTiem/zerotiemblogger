@@ -1,0 +1,7 @@
+@import 'body.scss'; 
+@import 'bookmark.scss'; 
+
+article {
+    @extend %bodyloayout;
+    @extend %bookmark;
+}
