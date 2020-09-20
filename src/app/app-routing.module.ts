@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ArticleContentComponent } from './article-content/article-content.component';
 import { HomeComponent } from './home/home.component';
 import { NETComponent } from './net/net.component';
+import { AngularComponent } from './angular/angular.component';
 import { OtherComponent } from './other/other.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'net', component: NETComponent },
+  { path: 'angulr', component: AngularComponent },
   { path: 'other', component: OtherComponent },
   { path: 'ArticleContent/:articleName', component: ArticleContentComponent },
   { path: 'ArticleContent/:folder/:articleName', component: ArticleContentComponent },
